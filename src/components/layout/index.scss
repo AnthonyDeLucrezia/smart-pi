@@ -1,0 +1,14 @@
+@import "./../../styles/colors.scss";
+
+.app-layout {
+  height: 100vh;
+
+  .app-layout-sider {
+    background-color: $bg-secondary;
+  }
+
+  .app-layout-content {
+    background-color: $bg-primary;
+    padding: 5%;
+  }
+}

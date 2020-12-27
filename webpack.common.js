@@ -4,7 +4,7 @@ const webpack = require("webpack");
 
 module.exports = {
   // the app entry point is /src/index.js
-  entry: path.resolve(__dirname, "src", "index.js"),
+  entry: path.resolve(__dirname, "src", "index.tsx"),
 
   module: {
     rules: [
@@ -21,6 +21,10 @@ module.exports = {
         },
       },
       {
+        test: /\.tsx?$/,
+        loader: "ts-loader",
+      },
+      {
         test: /\.scss$/,
         use: [
           {
@@ -35,6 +39,9 @@ module.exports = {
         ],
       },
     ],
+  },
+  resolve: {
+    extensions: [".tsx", ".ts", ".js"],
   },
   output: {
     path: path.resolve(__dirname, "dist/"),
