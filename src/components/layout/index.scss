@@ -4,11 +4,13 @@
   height: 100vh;
 
   .app-layout-sider {
-    background-color: $bg-secondary;
+    .ant-layout-sider-trigger {
+      padding-top: 15px;
+    }
   }
 
   .app-layout-content {
-    background-color: $bg-primary;
-    padding: 5%;
+    // background-color: $bg-primary;
+    padding: 3%;
   }
 }

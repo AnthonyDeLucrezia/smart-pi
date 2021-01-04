@@ -9,22 +9,22 @@ export const Dashboard = () => {
   const cryptoArr: CardPriceProps[] = [
     {
       title: "BTC",
-      currentValue: "25555 $",
+      currentValue: "25555",
       priceChange: 10,
     },
     {
       title: "ETH",
-      currentValue: "625 $",
+      currentValue: "625",
       priceChange: 2.6,
     },
     {
       title: "XRP",
-      currentValue: "0.96 $",
+      currentValue: "0.96",
       priceChange: 41,
     },
     {
       title: "DOT",
-      currentValue: "526 $",
+      currentValue: "526",
       priceChange: -15,
     },
   ];
@@ -33,7 +33,7 @@ export const Dashboard = () => {
       <Row gutter={16}>
         {cryptoArr.map((x) => {
           return (
-            <Col span={6}>
+            <Col span={5}>
               <CardPrice
                 title={x.title}
                 currentValue={x.currentValue}
