@@ -3,14 +3,12 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const webpack = require("webpack");
 
 module.exports = {
-  // the app entry point is /src/index.js
   entry: path.resolve(__dirname, "src", "index.tsx"),
-
   module: {
     rules: [
       {
         // for any file with a suffix of js or jsx
-        test: /\.jsx?$/,
+        test: /\.(js|jsx|ts|tsx)?$/,
         // ignore transpiling JavaScript from node_modules as it should be that state
         exclude: /node_modules/,
         // use the babel-loader for transpiling JavaScript to a suitable format
@@ -21,8 +19,12 @@ module.exports = {
         },
       },
       {
-        test: /\.tsx?$/,
+        test: /\.(js|jsx|ts|tsx)?$/,
         loader: "ts-loader",
+        options: {
+          transpileOnly: true,
+        },
+        exclude: /node_modules/,
       },
       {
         test: /\.scss$/,
@@ -56,6 +58,9 @@ module.exports = {
     }),
     new webpack.DefinePlugin({
       "process.env.PUBLIC_URL": path.join(__dirname, "public/"),
+      "process.env.CRYPTO_URL": JSON.stringify(
+        "https://coingecko.com/api/documentations/v3"
+      ),
     }),
   ],
 };

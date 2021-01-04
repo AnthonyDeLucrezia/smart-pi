@@ -16,8 +16,10 @@
     "@types/react-dom": "^17.0.0",
     "@types/react-router-dom": "^5.1.7",
     "antd": "^4.9.4",
+    "babel-plugin-root-import": "^6.6.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-query": "^3.5.9",
     "react-router-dom": "^5.2.0"
   },
   "devDependencies": {

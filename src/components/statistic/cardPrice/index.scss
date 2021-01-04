@@ -1,14 +1,19 @@
-// .card-price {
-//   background-color: $bg-secondary;
-//   border: 0 solid #2e3648;
-//   border-radius: 0.25rem;
+.card-statistic {
+  .ant-statistic-content-suffix {
+    padding-left: 15px;
+  }
+  .card-statistic-meta {
+    padding-top: 10px;
+    .card-statistic-perc {
+      padding-right: 10px;
+    }
 
-//   .ant-card-head {
-//     // color: $text-primary;
-//     border: unset;
-//   }
+    .card-statistic-green {
+      color: green;
+    }
 
-//   // .ant-statistic-title {
-//   //   color: $text-primary;
-//   // }
-// }
+    .card-statistic-red {
+      color: red;
+    }
+  }
+}
