@@ -1,9 +1,10 @@
+@import "./../../../styles/colors.scss";
+
 .card-statistic {
   .ant-statistic-content-suffix {
     padding-left: 15px;
   }
-  .card-statistic-meta {
-    padding-top: 10px;
+  .card-statistic-perc-change {
     .card-statistic-perc {
       padding-right: 10px;
     }
@@ -15,5 +16,11 @@
     .card-statistic-red {
       color: red;
     }
+  }
+
+  .wallet-amount {
+    margin-top: 4px;
+    color: $text-dark-secondary;
+    font-size: 14px;
   }
 }

@@ -1,9 +1,15 @@
 import { ReactText } from "react";
+import { CryptoQuotesLatest } from "../modules/crypto.model";
 
 export enum CryptoQueriesKeys {
-  Btc = "btc",
+  QuotesLatest = "quotesLatest",
 }
 
-export type CryptoResponse = {
-  test: ReactText;
+export type CryptoQuotesLatestRequest = {
+  cryptoList: ReactText[];
+  currency: ReactText;
+};
+
+export type CryptoQuotesLatestResponse = {
+  data: CryptoQuotesLatest[];
 };

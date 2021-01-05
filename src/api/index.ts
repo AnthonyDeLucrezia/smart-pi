@@ -1,11 +1,11 @@
-export type Api = "crypto";
+export type Api = "raspberryPi";
 type RequestMethod = "GET" | "POST" | "PATCH" | "PUT" | "DELETE";
 type RequestType = "json" | "formData";
 
 export const getApiUrl = (api: Api) => {
   switch (api) {
-    case "crypto":
-      return process.env.CRYPTO_URL;
+    case "raspberryPi":
+      return process.env.API_PI_URL;
   }
 };
 
@@ -36,7 +36,11 @@ const handleErrorStatus = async (response: Response) => {
   }
 };
 
-const generateHeaders = (method: RequestMethod, type?: RequestType) => {
+const generateHeaders = (
+  method: RequestMethod,
+  type?: RequestType,
+  api?: Api
+) => {
   const headers: HeadersInit = {};
 
   if (method === "POST" || method === "PATCH" || method === "PUT") {
@@ -56,21 +60,18 @@ export const performReq = async <T>(
   type?: RequestType
 ) => {
   const headers = generateHeaders(method, type);
-  const authHeaders: HeadersInit = {
-    ...headers,
-    Authorization: `Bearer `,
-  };
 
   const bodyInput =
     type === "formData" ? (body as FormData) : JSON.stringify(body);
 
   try {
     const apiUrl = getApiUrl(api);
-    const response = await fetch(`${apiUrl}/api${endpoint}`, {
+    const response = await fetch(`${apiUrl}/${endpoint}`, {
       method,
-      headers: authHeaders,
+      headers: headers,
       body: bodyInput,
     });
+
     if (response.ok) {
       return response.json() as Promise<T>;
     }

@@ -58,8 +58,9 @@ module.exports = {
     }),
     new webpack.DefinePlugin({
       "process.env.PUBLIC_URL": path.join(__dirname, "public/"),
-      "process.env.CRYPTO_URL": JSON.stringify(
-        "https://coingecko.com/api/documentations/v3"
+      "process.env.API_PI_URL": JSON.stringify("http://localhost:3100"),
+      "process.env.COINMARKETCAP_KEY": JSON.stringify(
+        "4ff9f244-0c97-490f-9798-2003441a4a44"
       ),
     }),
   ],
